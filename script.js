@@ -1,8 +1,9 @@
 // Use your own OpenWeatherMap API Key below
-// const apiKey = {{OpenWeatherMap_API_KEY_HERE}};
+// const apiKey = '{{OpenWeatherMap_API_KEY_HERE}};'
 
 const weatherContainer = document.getElementById("weather");
 const city = document.getElementById("city");
+const error = document.getElementById('error');
 
 const units = 'imperial'; //can be imperial or metric
 let temperatureSymobol = units == 'imperial' ? "°F" : "°C";
@@ -11,6 +12,7 @@ async function fetchWeather() {
     try {
         weatherContainer.innerHTML = '';
         error.innerHTML = '';
+        city.innerHTML = '';
 
 
         const cnt = 10;
@@ -21,6 +23,7 @@ async function fetchWeather() {
 
         const response = await fetch(apiUrl);
         const data = await response.json();
+        console.log(27, data);
 
         //Display error if user types invalid city or no city
         if (data.cod == '400' || data.cod == '404') {
@@ -28,9 +31,9 @@ async function fetchWeather() {
             return;
         }
         //Display weather data for each 3 hour increment
-        data.list.forEach(data => {
-            const hourlyWeatherData = createWeatherDescription(data);
-            weatherContainer.appendChild(hourlyWeatherData);
+        data.list.forEach(hourlyWeatherData => {
+            const hourlyWeatherDataDiv = createWeatherDescription(hourlyWeatherData);
+            weatherContainer.appendChild(hourlyWeatherDataDiv);
         });
 
         // Display city name based on latitude and longitude
@@ -41,9 +44,10 @@ async function fetchWeather() {
     }
 }
 
-function convertTimeToEastern(dt) {
+function convertToLocalTime(dt) {
 
     // Create a new Date object by multiplying the Unix timestamp by 1000 to convert it to milliseconds
+    // Will produce a time in the local timezone of user's computer
     const date = new Date(dt * 1000);
 
     const year = date.getFullYear();
@@ -63,7 +67,7 @@ function createWeatherDescription(weatherData) {
     const { main, dt } = weatherData;
 
     const description = document.createElement("div");
-    const convertedDateAndTime = convertTimeToEastern(dt);
+    const convertedDateAndTime = convertToLocalTime(dt);
 
     description.innerHTML = `
         <div class = "weather_description">${main.temp}${temperatureSymobol} - ${convertedDateAndTime.substring(10)} - ${convertedDateAndTime.substring(5, 10)} </div>

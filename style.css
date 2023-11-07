@@ -10,15 +10,7 @@ body {
 input {
     margin-top: 2rem;
     padding: 1rem;
-
 }
-
-
-
-.title {
-    color: black;
-}
-
 
 .weather_description {
     color: white;
