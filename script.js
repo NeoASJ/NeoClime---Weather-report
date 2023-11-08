@@ -23,7 +23,6 @@ async function fetchWeather() {
 
         const response = await fetch(apiUrl);
         const data = await response.json();
-        console.log(27, data);
 
         //Display error if user types invalid city or no city
         if (data.cod == '400' || data.cod == '404') {
@@ -69,6 +68,7 @@ function createWeatherDescription(weatherData) {
     const description = document.createElement("div");
     const convertedDateAndTime = convertToLocalTime(dt);
 
+    // '2023-11-07 07:00:00 PM'
     description.innerHTML = `
         <div class = "weather_description">${main.temp}${temperatureSymobol} - ${convertedDateAndTime.substring(10)} - ${convertedDateAndTime.substring(5, 10)} </div>
     `;
