@@ -8,8 +8,10 @@ LIVE DEMO
 ```
 
 LINK -  https://youtu.be/bL68DESHFjA
+
 WATCH PREVIEW 
-[![Watch the video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=https://youtu.be/bL68DESHFjA)
+
+[![Watch the video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=https://www.youtube.com/watch?v=bL68DESHFjA)
 
 
 
