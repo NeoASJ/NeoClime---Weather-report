@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Weather Elements</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: #eef4fa;
+      color: #225385;
+      margin: 0;
+      padding: 36px 0 0 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      font-size: 2rem;
+      letter-spacing: 0.03em;
+      margin-bottom: 18px;
+      color: #1769b2;
+      text-align: center;
+      font-weight: 800;
+    }
+    ul {
+      list-style: disc inside;
+      max-width: 520px;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      background: #fff;
+      margin-bottom: 12px;
+      border-radius: 9px;
+      box-shadow: 0 3px 14px rgba(57,122,214,0.13);
+      padding: 14px 18px;
+      font-size: 1.11rem;
+      line-height: 1.56;
+    }
+    b { color: #2d7adb; }
+    @media (max-width:600px){
+      h1 {font-size: 1.2rem;}
+      ul {width: 96vw; max-width: 96vw;}
+      li {font-size: 1rem;}
+    }
+  </style>
+</head>
+<body>
+  <h1>About Weather Data Elements</h1>
+  <ul>
+    <li><b>Coords</b>: The latitude and longitude showing the exact global position where the weather was measured.</li>
+    <li><b>Temperature</b>: The current air temperature at the location, usually in degrees Celsius or Fahrenheit.</li>
+    <li><b>Temperature Range</b>: The lowest and highest temperatures recorded or expected for the period, showing daily variation.</li>
+    <li><b>Pressure</b>: Atmospheric pressure at this location (in hPa); higher pressure often signals clear weather, while lower pressure means storms or rain may occur.</li>
+    <li><b>Humidity</b>: How much moisture is in the air, given as a percentage. The higher the number, the more humid it feels.</li>
+    <li><b>Wind</b>: How fast the air is moving and from which direction, shown in meters per second (m/s) or km/h, plus compass direction in degrees.</li>
+    <li><b>Clouds</b>: A description of sky conditions—whether it’s clear, partly cloudy, overcast, or the type of clouds present.</li>
+    <li><b>Visibility</b>: The distance (in meters or kilometers) you can see ahead before objects become hidden by fog, rain, or haze. 10,000 meters means very clear.</li>
+    <li><b>Sea Level Pressure</b>: The air pressure recalculated to what it would be at sea level, making it easier to compare locations at different elevations.</li>
+    <li><b>Ground Level Pressure</b>: The atmospheric pressure measured at the ground at your location, which may be above or below sea level.</li>
+    <li><b>Sunrise</b>: The local time when the sun rises above the horizon for this place.</li>
+    <li><b>Sunset</b>: The local time when the sun sets below the horizon.</li>
+    <li><b>Time of Reading</b>: The exact date and time (in local time) when this weather data was observed or reported.</li>
+  </ul>
+</body>
+</html>
